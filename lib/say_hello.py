@@ -1,2 +1,4 @@
 def say_hello(name):
-    return "hello {name}"
+    return f"hello {name}"
+
+print(say_hello("thomas"))
