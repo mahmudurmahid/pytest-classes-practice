@@ -14,7 +14,7 @@ def decode(encrypted, key):
 
     plaintext_chars = []
     for i in encrypted:
-        plain_char = cipher[65 - ord(i)]
+        plain_char = cipher[ord(i) - 65]
         plaintext_chars.append(plain_char)
 
     return "".join(plaintext_chars)
