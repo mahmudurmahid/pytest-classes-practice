@@ -21,10 +21,3 @@ class DiaryEntry:
     def reading_chunk(self, wpm, minutes):
         number_of_words = wpm * minutes
         return " ".join(self.contents.split()[:number_of_words])
-
-result = DiaryEntry("My Title", "These are the contents")
-format = result.format()
-count_words = result.count_words()
-reading_time = result.reading_time(2)
-reading_chunk = result.reading_chunk(2, 2)
-print(reading_chunk)
