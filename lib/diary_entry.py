@@ -7,9 +7,10 @@ class DiaryEntry:
         return f"{self.title}: {self.contents}"
 
     def count_words(self):
-        # Returns:
-        #   int: the number of words in the diary entry
-        pass
+        count_title = len(self.title.split())
+        count_contents = len(self.contents.split())
+
+        return count_title + count_contents
 
     def reading_time(self, wpm):
         # Parameters:
@@ -34,3 +35,9 @@ class DiaryEntry:
         # skipping what has already been read, until the contents is fully read.
         # The next call after that should restart from the beginning.
         pass
+
+
+result = DiaryEntry("My Title", "These are the contents")
+format = result.format()
+count_words = result.count_words()
+print(count_words)
