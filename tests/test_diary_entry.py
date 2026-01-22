@@ -29,3 +29,13 @@ def test_diary_entry_reading_time_return_time_needed_to_read_contents_in_mins():
     
     result = diary_entry.reading_time(2)
     assert result == "2 mins"
+
+"""
+reading_chunk method: when the arguments wpm and minutes are provided,
+the method returns a string of text which a user can read
+"""
+def test_diary_reading_chunk_returns_string_from_contents():
+    diary_entry = DiaryEntry("My Title", "These are the contents")
+    
+    result = diary_entry.reading_chunk(1, 3)
+    assert result == "These are the"
