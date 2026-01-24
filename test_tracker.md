@@ -1,6 +1,4 @@
-# {{PROBLEM}} Class Design Recipe
-
-Copy this into a `recipe.md` in your project and fill it out.
+# Test Tracker Class Design Recipe
 
 ## 1. Describe the Problem
 
