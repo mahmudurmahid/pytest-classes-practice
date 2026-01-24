@@ -15,34 +15,31 @@ I want to mark tasks as complete and have them disappear from the list.
 _Include the initializer, public properties, and public methods with all parameters, return values, and side-effects._
 
 ```python
-# EXAMPLE
 
-class Reminder:
-    # User-facing properties:
-    #   name: string
-
-    def __init__(self, name):
-        # Parameters:
-        #   name: string
-        # Side effects:
-        #   Sets the name property of the self object
+class TaskTracker:
+    def __init__(self):
+        # parameters: none
+        # side effects: initialises an empty list of tasks 
         pass # No code here yet
 
-    def remind_me_to(self, task):
-        # Parameters:
-        #   task: string representing a single task
-        # Returns:
-        #   Nothing
-        # Side-effects
-        #   Saves the task to the self object
+    def add_task(self, task):
+        # parameters: (str) user adds a single task they want to complete later
+        # returns: nothing
+        # side effects: adds task to a list of tasks
         pass # No code here yet
+    
+    def complete_task(self, task):
+        # parameters: (str) user completes a task
+        # returns: completed task message or list of tasks still to do
+        # side effects: removes task from list of tasks
+        pass # No code here yet
+    
+    def task_list(self):
+       # parameters: none
+       # returns: (list) tasks yet to be completed
+       # side effects: none
+       pass # No code here yet
 
-    def remind(self):
-        # Returns:
-        #   A string reminding the user to do the task
-        # Side-effects:
-        #   Throws an exception if no task is set
-        pass # No code here yet
 ```
 
 ## 3. Create Examples as Tests
