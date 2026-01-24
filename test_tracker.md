@@ -47,30 +47,80 @@ class TaskTracker:
 _Make a list of examples of how the class will behave in different situations._
 
 ``` python
-# EXAMPLE
 
 """
-Given a name and a task
-#remind reminds the user to do the task
+Given a new task tracker
+#task_list returns an empty list
 """
-reminder = Reminder("Kay")
-reminder.remind_me_to("Walk the dog")
-reminder.remind() # => "Walk the dog, Kay!"
+tracker = TaskTracker()
+tracker.task_list()  # => []
 
 """
-Given a name and no task
-#remind raises an exception
+Given a new task tracker
+#add_task adds a task to the task list
 """
-reminder = Reminder("Kay")
-reminder.remind() # raises an error with the message "No task set."
+tracker = TaskTracker()
+tracker.add_task("Buy milk")
+tracker.task_list()  # => ["Buy milk"]
 
 """
-Given a name and an empty task
-#remind still reminds the user to do the task, even though it looks odd
+Given a task tracker with multiple tasks
+#task_list returns all tasks in the order they were added
 """
-reminder = Reminder("Kay")
-reminder.remind_me_to("")
-reminder.remind() # => ", Kay!"
+tracker = TaskTracker()
+tracker.add_task("Buy milk")
+tracker.add_task("Walk the dog")
+tracker.add_task("Read book")
+tracker.task_list()  # => ["Buy milk", "Walk the dog", "Read book"]
+
+"""
+Given a task tracker with one task
+#complete_task removes the task and returns a completion message
+"""
+tracker = TaskTracker()
+tracker.add_task("Buy milk")
+tracker.complete_task("Buy milk")
+# => "Task completed: Buy milk"
+tracker.task_list()  # => []
+
+"""
+Given a task tracker with multiple tasks
+#complete_task removes the specified task and returns remaining tasks
+"""
+tracker = TaskTracker()
+tracker.add_task("Buy milk")
+tracker.add_task("Walk the dog")
+result = tracker.complete_task("Buy milk")
+# => ["Walk the dog"]
+tracker.task_list()  # => ["Walk the dog"]
+
+"""
+Given a task tracker with multiple tasks
+#complete_task only removes the completed task
+"""
+tracker = TaskTracker()
+tracker.add_task("Buy milk")
+tracker.add_task("Walk the dog")
+tracker.complete_task("Walk the dog")
+tracker.task_list()  # => ["Buy milk"]
+
+"""
+Given a task tracker
+#add_task allows an empty string task
+"""
+tracker = TaskTracker()
+tracker.add_task("")
+tracker.task_list()  # => [""]
+
+"""
+Given a task tracker without the specified task
+#complete_task raises an exception
+"""
+tracker = TaskTracker()
+tracker.add_task("Buy milk")
+tracker.complete_task("Walk the dog")
+# raises an error with the message "Task not found."
+
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
