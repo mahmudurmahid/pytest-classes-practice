@@ -45,30 +45,69 @@ class GrammarStats:
 _Make a list of examples of how the class will behave in different situations._
 
 ``` python
-# EXAMPLE
+"""
+Given a text that starts with a capital letter and ends with a period
+#check returns True
+"""
+stats = GrammarStats()
+stats.check("Hello world.")  # => True
 
 """
-Given a name and a task
-#remind reminds the user to do the task
+Given a text that starts with a lowercase letter and ends with a period
+#check returns False
 """
-reminder = Reminder("Kay")
-reminder.remind_me_to("Walk the dog")
-reminder.remind() # => "Walk the dog, Kay!"
+stats = GrammarStats()
+stats.check("hello world.")  # => False
 
 """
-Given a name and no task
-#remind raises an exception
+Given a text that starts with a capital letter but does not end with a punctuation mark
+#check returns False
 """
-reminder = Reminder("Kay")
-reminder.remind() # raises an error with the message "No task set."
+stats = GrammarStats()
+stats.check("Hello world")  # => False
 
 """
-Given a name and an empty task
-#remind still reminds the user to do the task, even though it looks odd
+Given a text that starts with a capital letter and ends with an exclamation mark
+#check returns True
 """
-reminder = Reminder("Kay")
-reminder.remind_me_to("")
-reminder.remind() # => ", Kay!"
+stats = GrammarStats()
+stats.check("Wow!")  # => True
+
+"""
+Given multiple texts checked, some passing and some failing
+#percentage_good returns the percentage of texts that passed
+"""
+stats = GrammarStats()
+stats.check("Hello.")       # passes
+stats.check("hello.")       # fails
+stats.check("How are you?") # passes
+stats.percentage_good()     # => 66
+
+"""
+Given no texts checked
+#percentage_good returns 0
+"""
+stats = GrammarStats()
+stats.percentage_good()     # => 0
+
+"""
+Given all texts fail the check
+#percentage_good returns 0
+"""
+stats = GrammarStats()
+stats.check("hello")   # fails
+stats.check("world")   # fails
+stats.percentage_good() # => 0
+
+"""
+Given all texts pass the check
+#percentage_good returns 100
+"""
+stats = GrammarStats()
+stats.check("Hello.") # passes
+stats.check("Wow!")   # passes
+stats.percentage_good() # => 100
+
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
