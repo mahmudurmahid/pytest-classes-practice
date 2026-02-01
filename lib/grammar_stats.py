@@ -1,6 +1,7 @@
 class GrammarStats:
     def __init__(self):
-        pass
+        self.texts_checked = 0
+        self.texts_passed = 0
 
     def check(self, text):
         # Parameters:
