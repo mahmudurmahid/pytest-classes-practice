@@ -4,15 +4,22 @@ class GrammarStats:
         self.texts_passed = 0
 
     def check(self, text):
-        # Parameters:
-        #   text: string
-        # Returns:
-        #   bool: true if the text begins with a capital letter and ends with a
-        #         sentence-ending punctuation mark, false otherwise
-        pass
+        self.texts_checked += 1
+
+        if text and text[0].isupper() and text[-1] in ".!?":
+            self.texts_passed += 1
+            return True
+        else:
+            return False
 
     def percentage_good(self):
-        # Returns:
-        #   int: the percentage of texts checked so far that passed the check
-        #        defined in the `check` method. The number 55 represents 55%.
-        pass
+        if self.texts_checked == 0:
+            return 0
+
+        percentage = (self.texts_passed * 100) // self.texts_checked
+        return percentage
+
+
+stats = GrammarStats()
+print(stats.check("Hello, World!"))
+print(stats.percentage_good())
