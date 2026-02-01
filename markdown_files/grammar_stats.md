@@ -13,34 +13,31 @@ As a user, I want to see the percentage of texts that passed the grammar check s
 _Include the initializer, public properties, and public methods with all parameters, return values, and side-effects._
 
 ```python
-# EXAMPLE
+class GrammarStats:
+    def __init__(self):
+        """
+        paramaters - none
+        returns - none
+        side-effects - none
+        """
+        pass
 
-class Reminder:
-    # User-facing properties:
-    #   name: string
+    def check(self, text):
+        """
+        parameters - string of text
+        returns - a boolean value that states True if the text begins with a capital letter and ends with a sentence-ending punctuation mark, false otherwise
+        side-effects - none
+        """
+        pass
 
-    def __init__(self, name):
-        # Parameters:
-        #   name: string
-        # Side effects:
-        #   Sets the name property of the self object
-        pass # No code here yet
+    def percentage_good(self):
+        """
+        parameters - none
+        returns - the percentage of texts checked so far that passed the check defined in the `check` method. The number 55 represents 55%
+        side-effects - none
+        """
+        pass
 
-    def remind_me_to(self, task):
-        # Parameters:
-        #   task: string representing a single task
-        # Returns:
-        #   Nothing
-        # Side-effects
-        #   Saves the task to the self object
-        pass # No code here yet
-
-    def remind(self):
-        # Returns:
-        #   A string reminding the user to do the task
-        # Side-effects:
-        #   Throws an exception if no task is set
-        pass # No code here yet
 ```
 
 ## 3. Create Examples as Tests
