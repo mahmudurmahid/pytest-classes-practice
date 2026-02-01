@@ -1,10 +1,12 @@
-# {{PROBLEM}} Class Design Recipe
+# GrammarStats Class Design Recipe
 
 Copy this into a `recipe.md` in your project and fill it out.
 
 ## 1. Describe the Problem
 
-_Put or write the user story here. Add any clarifying notes you might have._
+As a user, I want to check if a text has proper sentence capitalization and punctuation so that I can ensure my sentences follow basic grammar rules
+
+As a user, I want to see the percentage of texts that passed the grammar check so that I can monitor my overall grammar quality
 
 ## 2. Design the Class Interface
 
