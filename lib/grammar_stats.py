@@ -18,8 +18,3 @@ class GrammarStats:
 
         percentage = (self.texts_passed * 100) // self.texts_checked
         return percentage
-
-
-stats = GrammarStats()
-print(stats.check("Hello, World!"))
-print(stats.percentage_good())
